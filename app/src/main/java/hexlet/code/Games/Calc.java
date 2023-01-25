@@ -13,7 +13,7 @@ public class Calc {
         int randomNumber2;
         int randomNumberOfOperator;
         int numbersLimit = 100;
-        int operatorsLimit = 4;
+        int operatorsLimit = 3;
         String operator;
         Random number = new Random();
         int count = 0;
@@ -30,12 +30,9 @@ public class Calc {
             } else if (randomNumberOfOperator == 1) {
                 operator = "-";
                 result = randomNumber - randomNumber2;
-            } else if (randomNumberOfOperator == 2) {
+            } else {
                 operator = "*";
                 result = randomNumber * randomNumber2;
-            } else {
-                operator = ":";
-                result = randomNumber / randomNumber2;
             }
 
             System.out.println("Question: " + randomNumber + " " + operator + " " + randomNumber2);
