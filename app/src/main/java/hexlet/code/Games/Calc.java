@@ -12,15 +12,17 @@ public class Calc {
         int randomNumber;
         int randomNumber2;
         int randomNumberOfOperator;
+        int numbersLimit = 100;
+        int operatorsLimit = 4;
         String operator;
         Random number = new Random();
         int count = 0;
         int result;
 
         do {
-            randomNumber = number.nextInt(100) + 1;
-            randomNumber2 = number.nextInt(100) + 1;
-            randomNumberOfOperator = number.nextInt(4);
+            randomNumber = number.nextInt(numbersLimit) + 1;
+            randomNumber2 = number.nextInt(numbersLimit) + 1;
+            randomNumberOfOperator = number.nextInt(operatorsLimit);
 
             if (randomNumberOfOperator == 0) {
                 operator = "+";

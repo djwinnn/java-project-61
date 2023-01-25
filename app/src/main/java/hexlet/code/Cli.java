@@ -6,7 +6,7 @@ public class Cli {
     private static String name;
 
     public static void communication() {
-        System.out.print("May I have your name?");
+        System.out.println("May I have your name?");
         Scanner scan = new Scanner(System.in);
         name = scan.nextLine();
 
