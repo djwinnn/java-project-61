@@ -8,28 +8,30 @@ import hexlet.code.Games.Progression;
 import java.util.Scanner;
 
 public final class App {
-    public String getGreeting() {
-        return "Welcome to the Brain Games!";
-    }
-
     public static void main(String[] args) {
+        int even = 2;
+        int calc = 3;
+        int gcd = 4;
+        int progression = 5;
+        int prime = 6;
+
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.\n1 - Greet\n2 - Even");
         System.out.println("3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit\nYour choice: ");
         int choiceUser = scan.nextInt();
 
-        System.out.println(new App().getGreeting());
+        System.out.println("Welcome to the Brain Games!");
         Cli.communication();
 
-        if (choiceUser == 2) {
+        if (choiceUser == even) {
             Even.even();
-        } else if (choiceUser == 3) {
+        } else if (choiceUser == calc) {
             Calc.calc();
-        } else if (choiceUser == 4) {
+        } else if (choiceUser == gcd) {
             GCD.gcd();
-        } else if (choiceUser == 5) {
+        } else if (choiceUser == progression) {
             Progression.progression();
-        } else if (choiceUser == 6) {
+        } else if (choiceUser == prime) {
             Prime.prime();
         }
     }
