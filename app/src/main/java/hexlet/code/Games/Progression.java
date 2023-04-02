@@ -1,18 +1,14 @@
 package hexlet.code.Games;
-
-import hexlet.code.Cli;
-
+import hexlet.code.Engine;
 import java.util.Random;
-import java.util.Scanner;
-
 public class Progression {
     public static void progression() {
-        Scanner scan = new Scanner(System.in);
         Random number = new Random();
         int startProgression;
         int stepInProgression;
-
         int count = 0;
+        String[] questions = new String[3];
+        String[] answersMachine = new String[3];
 
         System.out.println("What number is missing in the progression?");
 
@@ -27,32 +23,21 @@ public class Progression {
                 startProgression += stepInProgression;
             }
 
-            for (int i = 0; i < numbersProgression.length; i++) {
-                if (numbersProgression[i] == numbersProgression[stepInProgression]) {
+            for (int j : numbersProgression) {
+                if (j == numbersProgression[stepInProgression]) {
                     stringQuestion.append("..").append(" ");
                 } else {
-                    stringQuestion.append(numbersProgression[i]).append(" ");
+                    stringQuestion.append(j).append(" ");
                 }
             }
 
-            System.out.println("Question: " + stringQuestion);
-            System.out.print("Your answer: ");
-            int answer = scan.nextInt();
+            questions[count] = stringQuestion + "";
+            answersMachine[count] = numbersProgression[stepInProgression] + "";
 
-            if (answer == numbersProgression[stepInProgression]) {
-                System.out.println("Correct!");
-                count++;
-            } else {
-                System.out.println( answer + " is wrong answer ;(. Correct answer was " + numbersProgression[stepInProgression] + ".");
-                System.out.println("Let's try again, " + Cli.getName() + "!");
-                break;
-            }
-
+            count++;
 
         } while (count < 3);
 
-        if (count == 3) {
-            System.out.println("Congratulations, " + Cli.getName() + "!");
-        }
+        Engine.engine(questions, answersMachine);
     }
 }
