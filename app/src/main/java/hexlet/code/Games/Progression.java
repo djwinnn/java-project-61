@@ -7,7 +7,7 @@ public class Progression {
         final int numbersLimit = 100;
         final int numbersLimitSteps = 4;
         final int limitObjectInArray = 3;
-        final int numbersLimitProgression = 4;
+        final int numbersLimitProgression = 5;
         final int maxGames = 3;
         int startProgression;
         int stepInProgression;
