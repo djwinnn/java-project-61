@@ -6,15 +6,18 @@ public class Prime {
         Random number = new Random();
         double randomNumber;
         int count = 0;
+        final int numbersLimit = 100;
+        final int limitObjectInArray = 3;
+        final int maxGames = 3;
         String result = "";
-        String[] questions = new String[3];
-        String[] answersMachine = new String[3];
+        String[] questions = new String[limitObjectInArray];
+        String[] answersMachine = new String[limitObjectInArray];
 
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         do {
 
-            randomNumber = number.nextInt(100) + 1;
+            randomNumber = number.nextInt(numbersLimit) + 1;
 
             for (int i = 2; i <= randomNumber / 2; ++i) {
                 if (randomNumber % i == 0) {
@@ -29,7 +32,7 @@ public class Prime {
 
             count++;
 
-        } while (count < 3);
+        } while (count < maxGames);
 
         Engine.engine(questions, answersMachine);
     }

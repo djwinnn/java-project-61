@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Engine {
     public static void engine(String[] questions, String[] answersMachine) {
         int count = 0;
-        int maxGames = 3;
+        final int maxGames = 3;
         Scanner scan = new Scanner(System.in);
 
         do {
@@ -17,8 +17,8 @@ public class Engine {
                 count++;
             } else {
                 System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
-                        + answersMachine[count] + ". \n" +
-                        "Let's try again, " + Cli.getName() + "!");
+                        + answersMachine[count] + ". \n"
+                        + "Let's try again, " + Cli.getName() + "!");
                 break;
             }
 

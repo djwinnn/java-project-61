@@ -3,19 +3,22 @@ import hexlet.code.Engine;
 import java.util.Random;
 public class GCD {
     public static void gcd() {
+        Random number = new Random();
         int randomNumber;
         int randomNumber2;
-        Random number = new Random();
         int count = 0;
         int result = 1;
-        String[] questions = new String[3];
-        String[] answersMachine = new String[3];
+        final int numbersLimit = 100;
+        final int limitObjectInArray = 3;
+        final int maxGames = 3;
+        String[] questions = new String[limitObjectInArray];
+        String[] answersMachine = new String[limitObjectInArray];
 
         System.out.println("Find the greatest common divisor of given numbers.");
 
         do {
-            randomNumber = number.nextInt(100) + 1;
-            randomNumber2 = number.nextInt(100) + 1;
+            randomNumber = number.nextInt(numbersLimit) + 1;
+            randomNumber2 = number.nextInt(numbersLimit) + 1;
 
             for (int i = 1; i <= randomNumber && i <= randomNumber2; i++) {
                 if (randomNumber % i == 0 && randomNumber2 % i == 0) {
@@ -28,7 +31,7 @@ public class GCD {
 
             count++;
 
-        } while (count < 3);
+        } while (count < maxGames);
 
         Engine.engine(questions, answersMachine);
     }

@@ -5,15 +5,17 @@ public class Calc {
     public static void calc() {
         String operator;
         Random number = new Random();
+        final int numbersLimit = 100;
+        final int limitObjectInArray = 3;
+        final int maxGames = 3;
+        final int operatorsLimit = 3;
         int randomNumber;
         int randomNumber2;
         int randomNumberOfOperator;
-        int numbersLimit = 100;
-        int operatorsLimit = 3;
         int count = 0;
         int result;
-        String[] questions = new String[3];
-        String[] answersMachine = new String[3];
+        String[] questions = new String[limitObjectInArray];
+        String[] answersMachine = new String[limitObjectInArray];
 
         System.out.println("What is the result of the expression?");
 
@@ -38,7 +40,7 @@ public class Calc {
 
             count++;
 
-        } while (count < 3);
+        } while (count < maxGames);
 
         Engine.engine(questions, answersMachine);
     }
