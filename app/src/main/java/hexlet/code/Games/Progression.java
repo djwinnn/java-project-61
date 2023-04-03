@@ -22,7 +22,6 @@ public class Progression {
             StringBuilder stringQuestion = new StringBuilder();
             startProgression = number.nextInt(numbersLimit) + 1;
             stepInProgression = number.nextInt(numbersLimitSteps) + 1;
-            
             for (int i = 0; i < numbersProgression.length; i++) {
                 numbersProgression[i] = startProgression;
                 startProgression += stepInProgression;
