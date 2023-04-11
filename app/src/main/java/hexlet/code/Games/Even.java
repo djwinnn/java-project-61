@@ -8,14 +8,14 @@ public class Even {
 
     public static void even() {
         generationGameData();
-        Engine.engine(Engine.getQUESTIONS(), Engine.getANSWERS_MACHINE(), taskGame);
+        Engine.engine(Engine.getQuestions(), Engine.getAnswersMachine(), taskGame);
     }
 
     public static void generationGameData() {
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             randomNumber = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
-            Engine.getQUESTIONS()[i] = String.valueOf(randomNumber);
-            Engine.getANSWERS_MACHINE()[i] = logicGame(randomNumber);
+            Engine.getQuestions()[i] = String.valueOf(randomNumber);
+            Engine.getAnswersMachine()[i] = logicGame(randomNumber);
         }
     }
 

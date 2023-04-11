@@ -13,7 +13,7 @@ public class Calc {
 
     public static void calc() {
         Calc.generationGameData();
-        Engine.engine(Engine.getQUESTIONS(), Engine.getANSWERS_MACHINE(), taskGame);
+        Engine.engine(Engine.getQuestions(), Engine.getAnswersMachine(), taskGame);
     }
 
     public static void logicGame(int randomNumberOfOperator, int randomNumber, int randomNumber2) {
@@ -35,8 +35,8 @@ public class Calc {
             randomNumber = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
             randomNumber2 = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
             Calc.logicGame(randomNumberOfOperator, randomNumber, randomNumber2);
-            Engine.getQUESTIONS()[i] = randomNumber + " " + operator + " " + randomNumber2;
-            Engine.getANSWERS_MACHINE()[i] = String.valueOf(result);
+            Engine.getQuestions()[i] = randomNumber + " " + operator + " " + randomNumber2;
+            Engine.getAnswersMachine()[i] = String.valueOf(result);
         }
     }
 }

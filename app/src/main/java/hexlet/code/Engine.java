@@ -2,21 +2,22 @@ package hexlet.code;
 import java.util.Objects;
 import java.util.Scanner;
 public class Engine {
-    public static String getName() {
-        return name;
-    }
-    public static String[] getQUESTIONS() {
-        return QUESTIONS;
-    }
-    public static String[] getANSWERS_MACHINE() {
-        return ANSWERS_MACHINE;
-    }
     private static String name;
     public static final int NUMBER_OF_ROUNDS = 3;
     public static final int NUMBERS_LIMIT = 100;
     public static final int LIMIT_OBJECT_IN_ARRAY = 3;
     private static final String[] QUESTIONS = new String[LIMIT_OBJECT_IN_ARRAY];
     private static final String[] ANSWERS_MACHINE = new String[LIMIT_OBJECT_IN_ARRAY];
+
+    public static String getName() {
+        return name;
+    }
+    public static String[] getQuestions() {
+        return QUESTIONS;
+    }
+    public static String[] getAnswersMachine() {
+        return ANSWERS_MACHINE;
+    }
     public static void engine(String[] QUESTIONS, String[] ANSWERS_MACHINE, String taskGame) {
 
         int count = 0;
