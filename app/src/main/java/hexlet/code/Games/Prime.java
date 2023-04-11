@@ -9,15 +9,15 @@ public class Prime {
 
     public static void prime() {
         Prime.generationGameData();
-        Engine.engine(Engine.getQuestions(), Engine.getAnswersMachine(), taskGame);
+        Engine.engine(Engine.getQUESTIONS(), Engine.getANSWERS_MACHINE(), taskGame);
     }
 
     public static void generationGameData() {
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             randomNumber = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
             Prime.logicGame(randomNumber);
-            Engine.getQuestions()[i] = randomNumber + " ";
-            Engine.getAnswersMachine()[i] = result;
+            Engine.getQUESTIONS()[i] = randomNumber + " ";
+            Engine.getANSWERS_MACHINE()[i] = result;
         }
     }
 

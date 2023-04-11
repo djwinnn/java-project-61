@@ -11,7 +11,7 @@ public class Progression {
 
     public static void progression() {
         Progression.generationGameData();
-        Engine.engine(Engine.getQuestions(), Engine.getAnswersMachine(), taskGame);
+        Engine.engine(Engine.getQUESTIONS(), Engine.getANSWERS_MACHINE(), taskGame);
     }
 
     public static void generationGameData() {
@@ -21,8 +21,8 @@ public class Progression {
             startProgression = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
             stepInProgression = number.nextInt(numbersLimitSteps) + 1;
             Progression.logicGame(numbersProgression, stringQuestion);
-            Engine.getQuestions()[i] = String.valueOf(stringQuestion);
-            Engine.getAnswersMachine()[i] = String.valueOf(numbersProgression[stepInProgression]);
+            Engine.getQUESTIONS()[i] = String.valueOf(stringQuestion);
+            Engine.getANSWERS_MACHINE()[i] = String.valueOf(numbersProgression[stepInProgression]);
         }
     }
 
