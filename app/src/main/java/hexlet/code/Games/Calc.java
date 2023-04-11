@@ -10,11 +10,15 @@ public class Calc {
     static int randomNumber;
     static int randomNumber2;
     static int randomNumberOfOperator;
-    static int count = 0;
     static int result;
     static String[] questions = new String[limitObjectInArray];
     static String[] answersMachine = new String[limitObjectInArray];
     static String taskGame = "What is the result of the expression?";
+
+    public static void calc() {
+        Calc.generationGameData();
+        Engine.engine(questions, answersMachine, taskGame);
+    }
 
     public static void logicGame(int randomNumberOfOperator, int randomNumber, int randomNumber2) {
         if (randomNumberOfOperator == 0) {
@@ -38,9 +42,5 @@ public class Calc {
             questions[i] = randomNumber + " " + operator + " " + randomNumber2;
             answersMachine[i] = String.valueOf(result);
         }
-    }
-    public static void calc() {
-        Calc.generationGameData();
-        Engine.engine(questions, answersMachine, taskGame);
     }
 }

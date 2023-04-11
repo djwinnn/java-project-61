@@ -10,6 +10,11 @@ public class Even {
     static String[] answersMachine = new String[limitObjectInArray];
     static String taskGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
+    public static void even() {
+        generationGameData();
+        Engine.engine(questions, answersMachine, taskGame);
+    }
+
     public static void generationGameData() {
         for (int i = 0; i < Engine.numberOfRounds; i++) {
             randomNumber = number.nextInt(numbersLimit) + 1;
@@ -20,10 +25,5 @@ public class Even {
 
     public static String logicGame(double number) {
         return number % 2 == 0 ? "yes" : "no";
-    }
-
-    public static void even() {
-        generationGameData();
-        Engine.engine(questions, answersMachine, taskGame);
     }
 }
