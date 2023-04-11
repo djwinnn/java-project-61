@@ -10,11 +10,9 @@ public class GCD {
         int result = 1;
         final int numbersLimit = 100;
         final int limitObjectInArray = 3;
-        final int maxGames = 3;
         String[] questions = new String[limitObjectInArray];
         String[] answersMachine = new String[limitObjectInArray];
-
-        System.out.println("Find the greatest common divisor of given numbers.");
+        String taskGame = "Find the greatest common divisor of given numbers.";
 
         do {
             randomNumber = number.nextInt(numbersLimit) + 1;
@@ -31,8 +29,8 @@ public class GCD {
 
             count++;
 
-        } while (count < maxGames);
+        } while (count < Engine.numberOfRounds);
 
-        Engine.engine(questions, answersMachine);
+        Engine.engine(questions, answersMachine, taskGame);
     }
 }

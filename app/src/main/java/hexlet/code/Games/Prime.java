@@ -8,12 +8,10 @@ public class Prime {
         int count = 0;
         final int numbersLimit = 100;
         final int limitObjectInArray = 3;
-        final int maxGames = 3;
         String result = "";
         String[] questions = new String[limitObjectInArray];
         String[] answersMachine = new String[limitObjectInArray];
-
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        String taskGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         do {
 
@@ -32,8 +30,8 @@ public class Prime {
 
             count++;
 
-        } while (count < maxGames);
+        } while (count < Engine.numberOfRounds);
 
-        Engine.engine(questions, answersMachine);
+        Engine.engine(questions, answersMachine, taskGame);
     }
 }

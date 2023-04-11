@@ -2,9 +2,19 @@ package hexlet.code;
 import java.util.Objects;
 import java.util.Scanner;
 public class Engine {
-    public static void engine(String[] questions, String[] answersMachine) {
+    static String name;
+    public static final int numberOfRounds = 3;
+    public static void communication() {
+        System.out.println("May I have your name? ");
+        Scanner scan = new Scanner(System.in);
+        name = scan.nextLine();
+
+        System.out.println("Hello, " + name + "!");
+    }
+    public static void engine(String[] questions, String[] answersMachine, String taskGame) {
         int count = 0;
-        final int maxGames = 3;
+
+        System.out.println(taskGame);
         Scanner scan = new Scanner(System.in);
 
         do {
@@ -18,14 +28,14 @@ public class Engine {
             } else {
                 System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
                         + answersMachine[count] + ". \n"
-                        + "Let's try again, " + Cli.getName() + "!");
+                        + "Let's try again, " + name + "!");
                 break;
             }
 
-        } while (count < maxGames);
+        } while (count < numberOfRounds);
 
-        if (count == maxGames) {
-            System.out.println("Congratulations, " + Cli.getName() + "!");
+        if (count == numberOfRounds) {
+            System.out.println("Congratulations, " + name + "!");
         }
     }
 }

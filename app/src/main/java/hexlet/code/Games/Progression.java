@@ -8,14 +8,12 @@ public class Progression {
         final int numbersLimitSteps = 4;
         final int limitObjectInArray = 3;
         final int numbersLimitProgression = 5;
-        final int maxGames = 3;
         int startProgression;
         int stepInProgression;
         int count = 0;
         String[] questions = new String[limitObjectInArray];
         String[] answersMachine = new String[limitObjectInArray];
-
-        System.out.println("What number is missing in the progression?");
+        String taskGame = "What number is missing in the progression?";
 
         do {
             int[] numbersProgression = new int[numbersLimitProgression];
@@ -40,8 +38,8 @@ public class Progression {
 
             count++;
 
-        } while (count < maxGames);
+        } while (count < Engine.numberOfRounds);
 
-        Engine.engine(questions, answersMachine);
+        Engine.engine(questions, answersMachine, taskGame);
     }
 }

@@ -19,10 +19,10 @@ public final class App {
 
         int choiceUser = scan.nextInt();
         if (choiceUser == 0) {
-            System.out.println("Game over!");
+            System.out.println("You have left the game.");
         } else {
             System.out.println("Welcome to the Brain Games!");
-            Cli.communication();
+            Engine.communication();
         }
 
         switch (choiceUser) {
