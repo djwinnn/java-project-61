@@ -15,8 +15,8 @@ public class Engine {
     public static final int NUMBER_OF_ROUNDS = 3;
     public static final int NUMBERS_LIMIT = 100;
     public static final int LIMIT_OBJECT_IN_ARRAY = 3;
-    private static final String[] questions = new String[LIMIT_OBJECT_IN_ARRAY];
-    private static final String[] answersMachine = new String[LIMIT_OBJECT_IN_ARRAY];
+    static String[] questions = new String[LIMIT_OBJECT_IN_ARRAY];
+    static String[] answersMachine = new String[LIMIT_OBJECT_IN_ARRAY];
     public static void engine(String[] questions, String[] answersMachine, String taskGame) {
 
         int count = 0;
