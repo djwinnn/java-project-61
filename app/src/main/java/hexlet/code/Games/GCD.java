@@ -10,7 +10,7 @@ public class GCD {
 
     public static void gcd() {
         GCD.generationGameData();
-        Engine.engine(Engine.questions, Engine.answersMachine, taskGame);
+        Engine.engine(Engine.getQuestions(), Engine.getAnswersMachine(), taskGame);
     }
 
     public static void generationGameData() {
@@ -18,8 +18,8 @@ public class GCD {
             randomNumber = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
             randomNumber2 = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
             GCD.logicGame(randomNumber, randomNumber2);
-            Engine.questions[i] = randomNumber + " " + randomNumber2;
-            Engine.answersMachine[i] = String.valueOf(result);
+            Engine.getQuestions()[i] = randomNumber + " " + randomNumber2;
+            Engine.getAnswersMachine()[i] = String.valueOf(result);
         }
     }
 
