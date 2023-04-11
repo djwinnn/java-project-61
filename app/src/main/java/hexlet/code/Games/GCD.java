@@ -2,28 +2,24 @@ package hexlet.code.Games;
 import hexlet.code.Engine;
 import java.util.Random;
 public class GCD {
-    static Random number = new Random();
-    static int randomNumber;
-    static int randomNumber2;
-    static int result = 1;
-    static final int numbersLimit = 100;
-    static final int limitObjectInArray = 3;
-    static String[] questions = new String[limitObjectInArray];
-    static String[] answersMachine = new String[limitObjectInArray];
-    static String taskGame = "Find the greatest common divisor of given numbers.";
+    public static Random number = new Random();
+    public static int randomNumber;
+    public static int randomNumber2;
+    public static int result = 1;
+    public static String taskGame = "Find the greatest common divisor of given numbers.";
 
     public static void gcd() {
         GCD.generationGameData();
-        Engine.engine(questions, answersMachine, taskGame);
+        Engine.engine(Engine.questions, Engine.answersMachine, taskGame);
     }
 
     public static void generationGameData() {
-        for (int i = 0; i < Engine.numberOfRounds; i++) {
-            randomNumber = number.nextInt(numbersLimit) + 1;
-            randomNumber2 = number.nextInt(numbersLimit) + 1;
+        for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
+            randomNumber = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
+            randomNumber2 = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
             GCD.logicGame(randomNumber, randomNumber2);
-            questions[i] = randomNumber + " " + randomNumber2;
-            answersMachine[i] = String.valueOf(result);
+            Engine.questions[i] = randomNumber + " " + randomNumber2;
+            Engine.answersMachine[i] = String.valueOf(result);
         }
     }
 

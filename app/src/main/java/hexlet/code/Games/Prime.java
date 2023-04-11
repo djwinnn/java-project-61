@@ -4,24 +4,20 @@ import java.util.Random;
 public class Prime {
     static Random number = new Random();
     static double randomNumber;
-    static final int numbersLimit = 100;
-    static final int limitObjectInArray = 3;
     static String result = "";
-    static String[] questions = new String[limitObjectInArray];
-    static String[] answersMachine = new String[limitObjectInArray];
     static String taskGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void prime() {
         Prime.generationGameData();
-        Engine.engine(questions, answersMachine, taskGame);
+        Engine.engine(Engine.questions, Engine.answersMachine, taskGame);
     }
 
     public static void generationGameData() {
-        for (int i = 0; i < Engine.numberOfRounds; i++) {
-            randomNumber = number.nextInt(numbersLimit) + 1;
+        for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
+            randomNumber = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
             Prime.logicGame(randomNumber);
-            questions[i] = randomNumber + " ";
-            answersMachine[i] = result;
+            Engine.questions[i] = randomNumber + " ";
+            Engine.answersMachine[i] = result;
         }
     }
 

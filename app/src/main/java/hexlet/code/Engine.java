@@ -2,15 +2,12 @@ package hexlet.code;
 import java.util.Objects;
 import java.util.Scanner;
 public class Engine {
-    static String name;
-    public static final int numberOfRounds = 3;
-    public static void communication() {
-        System.out.println("May I have your name? ");
-        Scanner scan = new Scanner(System.in);
-        name = scan.nextLine();
-
-        System.out.println("Hello, " + name + "!");
-    }
+    public static String name;
+    public static final int NUMBER_OF_ROUNDS = 3;
+    public static final int NUMBERS_LIMIT = 100;
+    public static final int LIMIT_OBJECT_IN_ARRAY = 3;
+    public static String[] questions = new String[LIMIT_OBJECT_IN_ARRAY];
+    public static String[] answersMachine = new String[LIMIT_OBJECT_IN_ARRAY];
     public static void engine(String[] questions, String[] answersMachine, String taskGame) {
         int count = 0;
 
@@ -32,10 +29,17 @@ public class Engine {
                 break;
             }
 
-        } while (count < numberOfRounds);
+        } while (count < NUMBER_OF_ROUNDS);
 
-        if (count == numberOfRounds) {
+        if (count == NUMBER_OF_ROUNDS) {
             System.out.println("Congratulations, " + name + "!");
         }
+    }
+    public static void communication() {
+        System.out.println("May I have your name? ");
+        Scanner scan = new Scanner(System.in);
+        name = scan.nextLine();
+
+        System.out.println("Hello, " + name + "!");
     }
 }

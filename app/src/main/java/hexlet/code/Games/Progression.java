@@ -3,30 +3,26 @@ import hexlet.code.Engine;
 import java.util.Random;
 public class Progression {
     static Random number = new Random();
-    static final int numbersLimit = 100;
-    static final int numbersLimitSteps = 4;
-    static final int limitObjectInArray = 3;
-    static final int numbersLimitProgression = 5;
     static int startProgression;
     static int stepInProgression;
-    static String[] questions = new String[limitObjectInArray];
-    static String[] answersMachine = new String[limitObjectInArray];
+    static final int numbersLimitSteps = 4;
+    static final int numbersLimitProgression = 5;
     static String taskGame = "What number is missing in the progression?";
 
     public static void progression() {
         Progression.generationGameData();
-        Engine.engine(questions, answersMachine, taskGame);
+        Engine.engine(Engine.questions, Engine.answersMachine, taskGame);
     }
 
     public static void generationGameData() {
-        for (int i = 0; i < Engine.numberOfRounds; i++) {
+        for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             int[] numbersProgression = new int[numbersLimitProgression];
             StringBuilder stringQuestion = new StringBuilder();
-            startProgression = number.nextInt(numbersLimit) + 1;
+            startProgression = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
             stepInProgression = number.nextInt(numbersLimitSteps) + 1;
             Progression.logicGame(numbersProgression, stringQuestion);
-            questions[i] = String.valueOf(stringQuestion);
-            answersMachine[i] = String.valueOf(numbersProgression[stepInProgression]);
+            Engine.questions[i] = String.valueOf(stringQuestion);
+            Engine.answersMachine[i] = String.valueOf(numbersProgression[stepInProgression]);
         }
     }
 
@@ -35,7 +31,6 @@ public class Progression {
             numbersProgression[i] = startProgression;
             startProgression += stepInProgression;
         }
-
         for (int j : numbersProgression) {
             if (j == numbersProgression[stepInProgression]) {
                 stringQuestion.append("..").append(" ");
