@@ -36,8 +36,8 @@ public class Calc {
 
     public static void calc() {
         Calc.generationGameData();
-        String TASK_GAME = "What is the result of the expression?";
-        Engine.engine(Engine.getQuestions(), Engine.getAnswersMachine(), TASK_GAME);
+        String taskGame = "What is the result of the expression?";
+        Engine.engine(Engine.getQuestions(), Engine.getAnswersMachine(), taskGame);
     }
 
     public static void logicGame(int randomNumberOfOperatorArg, int randomNumberArg, int randomNumber2Arg) {
