@@ -22,7 +22,7 @@ public class Prime {
     }
 
     public static void logicGame(double randomNumber) {
-        for (int i = 1; i <= randomNumber / 2; ++i) {
+        for (int i = 2; i < randomNumber; i++) {
             if (randomNumber % i == 0) {
                 result = "no";
                 break;

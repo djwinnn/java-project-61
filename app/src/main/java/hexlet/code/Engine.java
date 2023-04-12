@@ -25,16 +25,16 @@ public class Engine {
         Scanner scan = new Scanner(System.in);
 
         do {
-            System.out.println("Question: " + QUESTIONS[count]);
+            System.out.println("Question: " + questions[count]);
             System.out.print("Your answer: ");
             String answerUser = scan.nextLine();
 
-            if (Objects.equals(answerUser, ANSWERS_MACHINE[count])) {
+            if (Objects.equals(answerUser, answersMachine[count])) {
                 System.out.println("Correct!");
                 count++;
             } else {
                 System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
-                        + ANSWERS_MACHINE[count] + ". \n"
+                        + answersMachine[count] + ". \n"
                         + "Let's try again, " + name + "!");
                 break;
             }
