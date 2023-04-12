@@ -3,10 +3,10 @@ import hexlet.code.Engine;
 import java.util.Random;
 public class Even {
     private static final Random NUMBER = new Random();
-    public static String taskGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void even() {
         generationGameData();
+        String taskGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         Engine.engine(Engine.getQuestions(), Engine.getAnswersMachine(), taskGame);
     }
 

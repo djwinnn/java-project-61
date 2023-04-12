@@ -9,7 +9,6 @@ public class Calc {
     private static int randomNumber2;
     private static int randomNumberOfOperator;
     private static int result;
-    private static final String TASK_GAME = "What is the result of the expression?";
 
     public static String getOperator() {
         return operator;
@@ -35,12 +34,9 @@ public class Calc {
         return result;
     }
 
-    public static String getTaskGame() {
-        return TASK_GAME;
-    }
-
     public static void calc() {
         Calc.generationGameData();
+        String TASK_GAME = "What is the result of the expression?";
         Engine.engine(Engine.getQuestions(), Engine.getAnswersMachine(), TASK_GAME);
     }
 
