@@ -2,14 +2,14 @@ package hexlet.code.Games;
 import hexlet.code.Engine;
 import java.util.Random;
 public class Calc {
-    public static String operator;
-    public static Random number = new Random();
-    public static final int OPERATORS_LIMIT = 3;
-    public static int randomNumber;
-    public static int randomNumber2;
-    public static int randomNumberOfOperator;
-    public static int result;
-    public static String taskGame = "What is the result of the expression?";
+    static String operator;
+    static Random number = new Random();
+    static final int OPERATORS_LIMIT = 3;
+    static int randomNumber;
+    static int randomNumber2;
+    static int randomNumberOfOperator;
+    static int result;
+    static String taskGame = "What is the result of the expression?";
 
     public static void calc() {
         Calc.generationGameData();
