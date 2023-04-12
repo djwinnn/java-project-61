@@ -2,8 +2,7 @@ package hexlet.code.Games;
 import hexlet.code.Engine;
 import java.util.Random;
 public class Even {
-    public static double randomNumber;
-    public static Random number = new Random();
+    private static final Random NUMBER = new Random();
     public static String taskGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void even() {
@@ -13,7 +12,7 @@ public class Even {
 
     public static void generationGameData() {
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            randomNumber = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
+            double randomNumber = NUMBER.nextInt(Engine.NUMBERS_LIMIT) + 1;
             Engine.getQuestions()[i] = String.valueOf(randomNumber);
             Engine.getAnswersMachine()[i] = logicGame(randomNumber);
         }
