@@ -2,18 +2,46 @@ package hexlet.code.Games;
 import hexlet.code.Engine;
 import java.util.Random;
 public class Calc {
-    public static String operator;
-    public static Random number = new Random();
-    public static final int OPERATORS_LIMIT = 3;
-    public static int randomNumber;
-    public static int randomNumber2;
-    public static int randomNumberOfOperator;
-    public static int result;
-    public static String taskGame = "What is the result of the expression?";
+    private static String operator;
+    private static final Random NUMBER = new Random();
+    private static final int OPERATORS_LIMIT = 3;
+    private static int randomNumber;
+    private static int randomNumber2;
+    private static int randomNumberOfOperator;
+    private static int result;
+    private static final String TASK_GAME = "What is the result of the expression?";
+
+    public static String getOperator() {
+        return operator;
+    }
+
+    public static Random getNumber() {
+        return NUMBER;
+    }
+
+    public static int getRandomNumber() {
+        return randomNumber;
+    }
+
+    public static int getRandomNumber2() {
+        return randomNumber2;
+    }
+
+    public static int getRandomNumberOfOperator() {
+        return randomNumberOfOperator;
+    }
+
+    public static int getResult() {
+        return result;
+    }
+
+    public static String getTaskGame() {
+        return TASK_GAME;
+    }
 
     public static void calc() {
         Calc.generationGameData();
-        Engine.engine(Engine.getQuestions(), Engine.getAnswersMachine(), taskGame);
+        Engine.engine(Engine.getQuestions(), Engine.getAnswersMachine(), TASK_GAME);
     }
 
     public static void logicGame(int randomNumberOfOperatorArg, int randomNumberArg, int randomNumber2Arg) {
@@ -31,9 +59,9 @@ public class Calc {
 
     public static void generationGameData() {
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            randomNumberOfOperator = number.nextInt(OPERATORS_LIMIT);
-            randomNumber = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
-            randomNumber2 = number.nextInt(Engine.NUMBERS_LIMIT) + 1;
+            randomNumberOfOperator = NUMBER.nextInt(OPERATORS_LIMIT);
+            randomNumber = NUMBER.nextInt(Engine.NUMBERS_LIMIT) + 1;
+            randomNumber2 = NUMBER.nextInt(Engine.NUMBERS_LIMIT) + 1;
             Calc.logicGame(randomNumberOfOperator, randomNumber, randomNumber2);
             Engine.getQuestions()[i] = randomNumber + " " + operator + " " + randomNumber2;
             Engine.getAnswersMachine()[i] = String.valueOf(result);
