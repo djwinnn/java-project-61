@@ -25,12 +25,15 @@ public class Prime {
     }
 
     public static void logicGame(double randomNumber) {
-        for (int i = 1; i < randomNumber; i++) {
+        for (int i = 2; i <= Math.sqrt(randomNumber); i++) {
             if (randomNumber % i == 0) {
                 result = "no";
                 break;
             }
             result = "yes";
+        }
+        if (randomNumber <= 1) {
+            result  = "no";
         }
     }
 }
