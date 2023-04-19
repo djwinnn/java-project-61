@@ -32,8 +32,5 @@ public class Prime {
             }
             result = "yes";
         }
-        if (randomNumber <= 1) {
-            result  = "no";
-        }
     }
 }
