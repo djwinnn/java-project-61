@@ -8,6 +8,12 @@ import java.util.Scanner;
 
 public final class App {
     public static void main(String[] args) {
+        final int CHOICE_EVEN = 2;
+        final int CHOICE_CALC = 3;
+        final int CHOICE_GCD = 4;
+        final int CHOICE_PROGRESSION = 5;
+        final int CHOICE_PRIME = 6;
+
         Scanner scan = new Scanner(System.in);
         System.out.println("""
                 Please enter the game number and press Enter.
@@ -29,11 +35,11 @@ public final class App {
         }
 
         switch (choiceUser) {
-            case 2 -> Even.even();
-            case 3 -> Calc.calc();
-            case 4 -> GCD.gcd();
-            case 5 -> Progression.progression();
-            case 6 -> Prime.prime();
+            case CHOICE_EVEN -> Even.even(); // линтер ругался магические числа
+            case CHOICE_CALC -> Calc.calc();
+            case CHOICE_GCD -> GCD.gcd();
+            case CHOICE_PROGRESSION -> Progression.progression();
+            case CHOICE_PRIME -> Prime.prime();
             default -> System.out.println("Game over!");
         }
     }
