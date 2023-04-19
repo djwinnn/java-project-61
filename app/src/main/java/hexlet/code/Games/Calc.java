@@ -31,7 +31,7 @@ public class Calc {
 
     public static void generationGameData() {
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            int maximumOperators = 3;
+            final int maximumOperators = 3;
             int randomNumberOfOperator = NUMBER.nextInt(maximumOperators);
             int randomNumber = NUMBER.nextInt(NUMBERS_LIMIT) + 1;
             int randomNumber2 = NUMBER.nextInt(NUMBERS_LIMIT) + 1;

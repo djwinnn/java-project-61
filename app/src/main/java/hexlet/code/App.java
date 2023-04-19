@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public final class App {
     public static void main(String[] args) {
-        final int CHOICE_EVEN = 2;
-        final int CHOICE_CALC = 3;
-        final int CHOICE_GCD = 4;
-        final int CHOICE_PROGRESSION = 5;
-        final int CHOICE_PRIME = 6;
+        final int choiceEven = 2;
+        final int choiceCalc = 3;
+        final int choiceGcd = 4;
+        final int choiceProgression = 5;
+        final int choicePrime = 6;
 
         Scanner scan = new Scanner(System.in);
         System.out.println("""
@@ -35,11 +35,11 @@ public final class App {
         }
 
         switch (choiceUser) {
-            case CHOICE_EVEN -> Even.even(); // линтер ругался магические числа
-            case CHOICE_CALC -> Calc.calc();
-            case CHOICE_GCD -> GCD.gcd();
-            case CHOICE_PROGRESSION -> Progression.progression();
-            case CHOICE_PRIME -> Prime.prime();
+            case choiceEven -> Even.even(); // линтер ругался магические числа
+            case choiceCalc -> Calc.calc();
+            case choiceGcd -> GCD.gcd();
+            case choiceProgression -> Progression.progression();
+            case choicePrime -> Prime.prime();
             default -> System.out.println("Game over!");
         }
     }
