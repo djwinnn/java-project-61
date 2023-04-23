@@ -5,15 +5,14 @@ public class Calc {
     private static final Random NUMBER = new Random();
     public static final int NUMBERS_LIMIT = 100;
     public static final int LIMIT_OBJECT_IN_ARRAY = 3;
-    private static final String[] QUESTIONS = new String[LIMIT_OBJECT_IN_ARRAY];
-    private static final String[] ANSWERS_MACHINE = new String[LIMIT_OBJECT_IN_ARRAY];
+    private static final String[][] GAME_DATA = new String[2][LIMIT_OBJECT_IN_ARRAY];
     private static String operator;
     private static int result;
 
     public static void calc() {
         Calc.generationGameData();
         String taskGame = "What is the result of the expression?";
-        Engine.engine(QUESTIONS, ANSWERS_MACHINE, taskGame);
+        Engine.engine(GAME_DATA, taskGame);
     }
 
     public static void logicGame(int randomNumberOfOperatorArg, int randomNumberArg, int randomNumber2Arg) {
@@ -36,8 +35,8 @@ public class Calc {
             int randomNumber = NUMBER.nextInt(NUMBERS_LIMIT) + 1;
             int randomNumber2 = NUMBER.nextInt(NUMBERS_LIMIT) + 1;
             Calc.logicGame(randomNumberOfOperator, randomNumber, randomNumber2);
-            QUESTIONS[i] = randomNumber + " " + operator + " " + randomNumber2;
-            ANSWERS_MACHINE[i] = String.valueOf(result);
+            GAME_DATA[0][i] = randomNumber + " " + operator + " " + randomNumber2;
+            GAME_DATA[1][i] = String.valueOf(result);
         }
     }
 }

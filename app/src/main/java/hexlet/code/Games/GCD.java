@@ -5,14 +5,13 @@ public class GCD {
     private static final Random NUMBER = new Random();
     public static final int NUMBERS_LIMIT = 100;
     public static final int LIMIT_OBJECT_IN_ARRAY = 3;
-    private static final String[] QUESTIONS = new String[LIMIT_OBJECT_IN_ARRAY];
-    private static final String[] ANSWERS_MACHINE = new String[LIMIT_OBJECT_IN_ARRAY];
+    private static final String[][] GAME_DATA = new String[2][LIMIT_OBJECT_IN_ARRAY];
     private static int result;
 
     public static void gcd() {
         GCD.generationGameData();
         String taskGame = "Find the greatest common divisor of given numbers.";
-        Engine.engine(QUESTIONS, ANSWERS_MACHINE, taskGame);
+        Engine.engine(GAME_DATA, taskGame);
     }
 
     public static void generationGameData() {
@@ -20,8 +19,8 @@ public class GCD {
             int randomNumber = NUMBER.nextInt(NUMBERS_LIMIT) + 1;
             int randomNumber2 = NUMBER.nextInt(NUMBERS_LIMIT) + 1;
             GCD.logicGame(randomNumber, randomNumber2);
-            QUESTIONS[i] = randomNumber + " " + randomNumber2;
-            ANSWERS_MACHINE[i] = String.valueOf(result);
+            GAME_DATA[0][i] = randomNumber + " " + randomNumber2;
+            GAME_DATA[1][i] = String.valueOf(result);
         }
     }
 

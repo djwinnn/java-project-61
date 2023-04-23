@@ -5,8 +5,7 @@ public class Progression {
     private static final Random NUMBER = new Random();
     public static final int NUMBERS_LIMIT = 100;
     public static final int LIMIT_OBJECT_IN_ARRAY = 3;
-    private static final String[] QUESTIONS = new String[LIMIT_OBJECT_IN_ARRAY];
-    private static final String[] ANSWERS_MACHINE = new String[LIMIT_OBJECT_IN_ARRAY];
+    private static final String[][] GAME_DATA = new String[2][LIMIT_OBJECT_IN_ARRAY];
     private static final int NUMBERS_LIMIT_STEPS = 4;
     private static final int NUMBERS_LIMIT_PROGRESSION = 5;
     private static int startProgression;
@@ -15,7 +14,7 @@ public class Progression {
     public static void progression() {
         Progression.generationGameData();
         String taskGame = "What number is missing in the progression?";
-        Engine.engine(QUESTIONS, ANSWERS_MACHINE, taskGame);
+        Engine.engine(GAME_DATA, taskGame);
     }
 
     public static void generationGameData() {
@@ -25,8 +24,8 @@ public class Progression {
             startProgression = NUMBER.nextInt(NUMBERS_LIMIT) + 1;
             stepInProgression = NUMBER.nextInt(NUMBERS_LIMIT_STEPS) + 1;
             Progression.logicGame(numbersProgression, stringQuestion);
-            QUESTIONS[i] = String.valueOf(stringQuestion);
-            ANSWERS_MACHINE[i] = String.valueOf(numbersProgression[stepInProgression]);
+            GAME_DATA[0][i] = String.valueOf(stringQuestion);
+            GAME_DATA[1][i] = String.valueOf(numbersProgression[stepInProgression]);
         }
     }
 

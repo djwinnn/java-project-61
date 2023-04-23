@@ -8,11 +8,6 @@ import java.util.Scanner;
 
 public final class App {
     public static void main(String[] args) {
-        final int choiceEven = 2;
-        final int choiceCalc = 3;
-        final int choiceGcd = 4;
-        final int choiceProgression = 5;
-        final int choicePrime = 6;
 
         Scanner scan = new Scanner(System.in);
         System.out.println("""
@@ -26,21 +21,16 @@ public final class App {
                 0 - Exit
                 Your choice:\s""");
 
-        int choiceUser = scan.nextInt();
-        if (choiceUser == 0) {
-            System.out.println("You have left the game.");
-        } else {
-            System.out.println("Welcome to the Brain Games!");
-            Cli.communication();
-        }
+        String choiceUser = scan.nextLine();
 
         switch (choiceUser) {
-            case choiceEven -> Even.even(); // линтер ругался магические числа
-            case choiceCalc -> Calc.calc();
-            case choiceGcd -> GCD.gcd();
-            case choiceProgression -> Progression.progression();
-            case choicePrime -> Prime.prime();
-            default -> System.out.println("Game over!");
+            case "0" -> System.out.println("You have left the game.");
+            case "1" -> Cli.communication();
+            case "2" -> Even.even();
+            case "3" -> Calc.calc();
+            case "4" -> GCD.gcd();
+            case "5" -> Progression.progression();
+            case "6" -> Prime.prime();
         }
     }
 }
