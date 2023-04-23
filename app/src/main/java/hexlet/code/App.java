@@ -31,6 +31,7 @@ public final class App {
             case "4" -> GCD.gcd();
             case "5" -> Progression.progression();
             case "6" -> Prime.prime();
+            default -> System.out.println("Incorrect input");
         }
     }
 }
