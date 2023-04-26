@@ -11,10 +11,10 @@ public class Calc {
 
     public static String[][] generationGameData() {
         final int limitObjectInArray = 3;
+        final int maximumOperators = 3;
         String[][] gameData = new String[2][limitObjectInArray];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            //int maximumOperators = 3;
-            int randomNumberOfOperator = Utils.getRandomInt(3);
+            int randomNumberOfOperator = Utils.getRandomInt(maximumOperators);
             int randomNumber =   Utils.getRandomInt(NUMBERS_LIMIT, 1);
             int randomNumber2 = Utils.getRandomInt(NUMBERS_LIMIT, 1);
             gameData[0][i] = randomNumber + " " + operatorDefinition(randomNumberOfOperator) + " " + randomNumber2;
