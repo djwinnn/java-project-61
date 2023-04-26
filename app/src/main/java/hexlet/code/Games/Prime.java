@@ -2,7 +2,6 @@ package hexlet.code.Games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Random;
 public class Prime {
     public static final int NUMBERS_LIMIT = 100;
     static String taskGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
