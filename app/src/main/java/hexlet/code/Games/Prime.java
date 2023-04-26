@@ -25,6 +25,9 @@ public class Prime {
 
     public static String logicGame(double randomNumber) {
         String result = "";
+        if (randomNumber <= 1) {
+            result = "no";
+        }
         for (int i = 2; i <= Math.sqrt(randomNumber); i++) {
             if (randomNumber % i == 0) {
                 result = "no";
