@@ -14,7 +14,7 @@ public class Even {
         String[][] gameData = new String[2][3];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             double randomNumber = Utils.getRandomInt(NUMBERS_LIMIT, 1);
-            gameData[0][i] = String.valueOf(Utils.getRandomInt(NUMBERS_LIMIT));
+            gameData[0][i] = String.valueOf(randomNumber);
             gameData[1][i] = logicGame(randomNumber);
         }
         return gameData;
