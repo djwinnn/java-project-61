@@ -12,9 +12,10 @@ public class Progression {
     }
 
     public static String[][] generationGameData() {
-        String[][] gameData = new String[2][3];
+        final int limitObjectInArray = 3;
         final int numberLimitProgression = 5;
         final int numberLimitSteps = 4;
+        String[][] gameData = new String[2][limitObjectInArray];
 
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             int[] numbersProgression = new int[numberLimitProgression];

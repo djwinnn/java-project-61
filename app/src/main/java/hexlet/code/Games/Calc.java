@@ -10,7 +10,8 @@ public class Calc {
     }
 
     public static String[][] generationGameData() {
-        String[][] gameData = new String[2][3];
+        final int limitObjectInArray = 3;
+        String[][] gameData = new String[2][limitObjectInArray];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             int maximumOperators = 3;
             int randomNumberOfOperator = Utils.getRandomInt(maximumOperators);
