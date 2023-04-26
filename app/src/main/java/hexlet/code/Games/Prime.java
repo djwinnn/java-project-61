@@ -15,7 +15,7 @@ public class Prime {
         final int limitObjectInArray = 3;
         String[][] gameData = new String[2][limitObjectInArray];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            int randomNumber = Utils.getRandomInt(NUMBERS_LIMIT, 1);
+            int randomNumber = Utils.getRandomInt(NUMBERS_LIMIT, -2);
             gameData[0][i] = randomNumber + " ";
             gameData[1][i] = logicGame(randomNumber);
         }
