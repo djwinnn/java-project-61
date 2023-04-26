@@ -1,5 +1,4 @@
 package hexlet.code;
-import java.util.Objects;
 import java.util.Scanner;
 public class Engine {
     public static final int NUMBER_OF_ROUNDS = 3;
@@ -16,7 +15,7 @@ public class Engine {
             System.out.print("Your answer: ");
             String answerUser = scan.nextLine();
 
-            if (Objects.equals(answerUser, gameData[1][count])) {
+            if (answerUser.equals(gameData[1][count])) {
                 System.out.println("Correct!");
                 count++;
             } else {
@@ -27,7 +26,7 @@ public class Engine {
             }
         }
 
-        if (count == NUMBER_OF_ROUNDS) {
+        if (count == NUMBER_OF_ROUNDS) {  //так и не понял как упрозднить это сравнение(
             System.out.println("Congratulations, " + Cli.getName() + "!");
         }
     }

@@ -1,42 +1,44 @@
 package hexlet.code.Games;
 import hexlet.code.Engine;
-import java.util.Random;
+import hexlet.code.Utils;
 public class Calc {
-    private static final Random NUMBER = new Random();
     public static final int NUMBERS_LIMIT = 100;
-    public static final int LIMIT_OBJECT_IN_ARRAY = 3;
-    private static final String[][] GAME_DATA = new String[2][LIMIT_OBJECT_IN_ARRAY];
-    private static String operator;
-    private static int result;
+    static String taskGame = "What is the result of the expression?";
 
     public static void calc() {
-        Calc.generationGameData();
-        String taskGame = "What is the result of the expression?";
-        Engine.engine(GAME_DATA, taskGame);
+        Engine.engine(generationGameData(), taskGame);
     }
 
-    public static void logicGame(int randomNumberOfOperatorArg, int randomNumberArg, int randomNumber2Arg) {
+    public static String[][] generationGameData() {
+        String[][] gameData = new String[2][3];
+        for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
+            int maximumOperators = 3;
+            int randomNumberOfOperator = Utils.getRandomInt(maximumOperators);
+            int randomNumber =   Utils.getRandomInt(NUMBERS_LIMIT, 1);
+            int randomNumber2 = Utils.getRandomInt(NUMBERS_LIMIT, 1);
+            gameData[0][i] = randomNumber + " " + operatorDefinition(randomNumberOfOperator) + " " + randomNumber2;
+            gameData[1][i] = String.valueOf(logicGame(randomNumberOfOperator, randomNumber, randomNumber2));
+        }
+        return gameData;
+    }
+
+    public static int logicGame(int randomNumberOfOperatorArg, int randomNumberArg, int randomNumber2Arg) {
         if (randomNumberOfOperatorArg == 0) {
-            operator = "+";
-            result = randomNumberArg + randomNumber2Arg;
+            return randomNumberArg + randomNumber2Arg;
         } else if (randomNumberOfOperatorArg == 1) {
-            operator = "-";
-            result = randomNumberArg - randomNumber2Arg;
+            return randomNumberArg - randomNumber2Arg;
         } else {
-            operator = "*";
-            result = randomNumberArg * randomNumber2Arg;
+            return randomNumberArg * randomNumber2Arg;
         }
     }
 
-    public static void generationGameData() {
-        for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            final int maximumOperators = 3;
-            int randomNumberOfOperator = NUMBER.nextInt(maximumOperators);
-            int randomNumber = NUMBER.nextInt(NUMBERS_LIMIT) + 1;
-            int randomNumber2 = NUMBER.nextInt(NUMBERS_LIMIT) + 1;
-            Calc.logicGame(randomNumberOfOperator, randomNumber, randomNumber2);
-            GAME_DATA[0][i] = randomNumber + " " + operator + " " + randomNumber2;
-            GAME_DATA[1][i] = String.valueOf(result);
+    public static String operatorDefinition(int randomNumberOfOperatorArg) {
+        if (randomNumberOfOperatorArg == 0) {
+            return  "+";
+        } else if (randomNumberOfOperatorArg == 1) {
+            return  "-";
+        } else {
+            return  "*";
         }
     }
 }

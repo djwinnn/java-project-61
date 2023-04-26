@@ -1,29 +1,28 @@
 package hexlet.code.Games;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 import java.util.Random;
 public class Prime {
-    private static final Random NUMBER = new Random();
     public static final int NUMBERS_LIMIT = 100;
-    public static final int LIMIT_OBJECT_IN_ARRAY = 3;
-    private static final String[][] GAME_DATA = new String[2][LIMIT_OBJECT_IN_ARRAY];
-    private static String result = "";
+    static String taskGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void prime() {
-        Prime.generationGameData();
-        String taskGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        Engine.engine(GAME_DATA, taskGame);
+        Engine.engine(generationGameData(), taskGame);
     }
 
-    public static void generationGameData() {
+    public static String[][] generationGameData() {
+        String[][] gameData = new String[2][3];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            int randomNumber = NUMBER.nextInt(NUMBERS_LIMIT) + 1;
-            Prime.logicGame(randomNumber);
-            GAME_DATA[0][i] = randomNumber + " ";
-            GAME_DATA[1][i] = result;
+            int randomNumber = Utils.getRandomInt(NUMBERS_LIMIT, 1);
+            gameData[0][i] = randomNumber + " ";
+            gameData[1][i] = logicGame(randomNumber);
         }
+        return gameData;
     }
 
-    public static void logicGame(double randomNumber) {
+    public static String logicGame(double randomNumber) {
+        String result = "";
         for (int i = 2; i <= Math.sqrt(randomNumber); i++) {
             if (randomNumber % i == 0) {
                 result = "no";
@@ -31,5 +30,6 @@ public class Prime {
             }
             result = "yes";
         }
+        return result;
     }
 }

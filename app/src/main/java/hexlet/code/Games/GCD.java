@@ -1,34 +1,33 @@
 package hexlet.code.Games;
 import hexlet.code.Engine;
-import java.util.Random;
+import hexlet.code.Utils;
+
 public class GCD {
-    private static final Random NUMBER = new Random();
     public static final int NUMBERS_LIMIT = 100;
-    public static final int LIMIT_OBJECT_IN_ARRAY = 3;
-    private static final String[][] GAME_DATA = new String[2][LIMIT_OBJECT_IN_ARRAY];
-    private static int result;
+    static String taskGame = "Find the greatest common divisor of given numbers.";
 
     public static void gcd() {
-        GCD.generationGameData();
-        String taskGame = "Find the greatest common divisor of given numbers.";
-        Engine.engine(GAME_DATA, taskGame);
+        Engine.engine(generationGameData(), taskGame);
     }
 
-    public static void generationGameData() {
+    public static String[][] generationGameData() {
+        String[][] gameData = new String[2][3];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            int randomNumber = NUMBER.nextInt(NUMBERS_LIMIT) + 1;
-            int randomNumber2 = NUMBER.nextInt(NUMBERS_LIMIT) + 1;
-            GCD.logicGame(randomNumber, randomNumber2);
-            GAME_DATA[0][i] = randomNumber + " " + randomNumber2;
-            GAME_DATA[1][i] = String.valueOf(result);
+            int randomNumber =  Utils.getRandomInt(NUMBERS_LIMIT, 1);
+            int randomNumber2 = Utils.getRandomInt(NUMBERS_LIMIT, 1);
+            gameData[0][i] = randomNumber + " " + randomNumber2;
+            gameData[1][i] = String.valueOf(logicGame(randomNumber, randomNumber2));
         }
+        return gameData;
     }
 
-    public static void logicGame(int randomNumber, int randomNumber2) {
+    public static int logicGame(int randomNumber, int randomNumber2) {
+        int result = 0;
         for (int i = 1; i <= randomNumber && i <= randomNumber2; i++) {
             if (randomNumber % i == 0 && randomNumber2 % i == 0) {
                 result = i;
             }
         }
+        return result;
     }
 }
