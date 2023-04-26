@@ -3,24 +3,24 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 public class Progression {
     public static final int NUMBERS_LIMIT = 100;
-    static String taskGame = "What number is missing in the progression?";
     private static int startProgression;
     private static int stepInProgression;
 
     public static void progression() {
+        String taskGame = "What number is missing in the progression?";
         Engine.engine(generationGameData(), taskGame);
     }
 
     public static String[][] generationGameData() {
         String[][] gameData = new String[2][3];
-        final int NUMBERS_LIMIT_PROGRESSION = 5;
-        final int NUMBERS_LIMIT_STEPS = 4;
+        final int numberLimitProgression = 5;
+        final int numberLimitSteps = 4;
 
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            int[] numbersProgression = new int[NUMBERS_LIMIT_PROGRESSION];
+            int[] numbersProgression = new int[numberLimitProgression];
             StringBuilder stringQuestion = new StringBuilder();
             startProgression = Utils.getRandomInt(NUMBERS_LIMIT) + 1;
-            stepInProgression = Utils.getRandomInt(NUMBERS_LIMIT_STEPS) + 1;
+            stepInProgression = Utils.getRandomInt(numberLimitSteps) + 1;
             Progression.logicGame(numbersProgression, stringQuestion);
             gameData[0][i] = String.valueOf(stringQuestion);
             gameData[1][i] = String.valueOf(numbersProgression[stepInProgression]);

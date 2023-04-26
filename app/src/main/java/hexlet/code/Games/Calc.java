@@ -3,9 +3,9 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 public class Calc {
     public static final int NUMBERS_LIMIT = 100;
-    static String taskGame = "What is the result of the expression?";
 
     public static void calc() {
+        String taskGame = "What is the result of the expression?";
         Engine.engine(generationGameData(), taskGame);
     }
 

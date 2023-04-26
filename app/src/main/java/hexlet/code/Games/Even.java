@@ -4,9 +4,10 @@ import hexlet.code.Utils;
 
 public class Even {
     public static final int NUMBERS_LIMIT = 100;
-    static String taskGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
 
     public static void even() {
+        String taskGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         Engine.engine(generationGameData(), taskGame);
     }
 

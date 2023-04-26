@@ -4,9 +4,10 @@ import hexlet.code.Utils;
 
 public class Prime {
     public static final int NUMBERS_LIMIT = 100;
-    static String taskGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
 
     public static void prime() {
+        String taskGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         Engine.engine(generationGameData(), taskGame);
     }
 

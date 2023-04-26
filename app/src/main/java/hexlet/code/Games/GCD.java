@@ -4,9 +4,10 @@ import hexlet.code.Utils;
 
 public class GCD {
     public static final int NUMBERS_LIMIT = 100;
-    static String taskGame = "Find the greatest common divisor of given numbers.";
+
 
     public static void gcd() {
+        String taskGame = "Find the greatest common divisor of given numbers.";
         Engine.engine(generationGameData(), taskGame);
     }
 
