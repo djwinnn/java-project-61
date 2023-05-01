@@ -8,22 +8,23 @@ public class GCD {
 
     public static void gcd() {
         String taskGame = "Find the greatest common divisor of given numbers.";
-        Engine.engine(generationGameData(), taskGame);
+        System.out.println(Engine.engine(generationGameData(), taskGame));
     }
 
     public static String[][] generationGameData() {
         final int limitObjectInArray = 3;
-        String[][] gameData = new String[2][limitObjectInArray];
+        final int questionsAndAnswers = 2;
+        String[][] gameData = new String[questionsAndAnswers][limitObjectInArray];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             int randomNumber =  Utils.getRandomInt(NUMBERS_LIMIT, 1);
             int randomNumber2 = Utils.getRandomInt(NUMBERS_LIMIT, 1);
             gameData[0][i] = randomNumber + " " + randomNumber2;
-            gameData[1][i] = String.valueOf(logicGame(randomNumber, randomNumber2));
+            gameData[1][i] = String.valueOf(whatGcd(randomNumber, randomNumber2));
         }
         return gameData;
     }
 
-    public static int logicGame(int randomNumber, int randomNumber2) {
+    public static int whatGcd(int randomNumber, int randomNumber2) {
         int result = 0;
         for (int i = 1; i <= randomNumber && i <= randomNumber2; i++) {
             if (randomNumber % i == 0 && randomNumber2 % i == 0) {

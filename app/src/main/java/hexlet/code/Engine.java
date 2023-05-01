@@ -2,32 +2,31 @@ package hexlet.code;
 import java.util.Scanner;
 public class Engine {
     public static final int NUMBER_OF_ROUNDS = 3;
-    public static void engine(String[][] gameData, String taskGame) {
+    public static String engine(String[][] gameData, String taskGame) {
 
-        int count = 0;
         Scanner scan = new Scanner(System.in);
 
-        Cli.communication();
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name? ");
+        String name = scan.nextLine();
+        System.out.println("Hello, " + name + "!");
         System.out.println(taskGame);
 
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
-            System.out.println("Question: " + gameData[0][count]);
+            System.out.println("Question: " + gameData[0][i]);
             System.out.print("Your answer: ");
             String answerUser = scan.nextLine();
 
-            if (answerUser.equals(gameData[1][count])) {
+            if (answerUser.equals(gameData[1][i])) {
                 System.out.println("Correct!");
-                count++;
+
             } else {
-                System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
-                        + gameData[1][count] + ". \n"
-                        + "Let's try again, " + Cli.getName() + "!");
-                break;
+                return answerUser + " is wrong answer ;(. Correct answer was "
+                        + gameData[1][i] + ". \n"
+                        + "Let's try again, " + name + "!";
             }
         }
 
-        if (count == NUMBER_OF_ROUNDS) {  //так и не понял как упрозднить это сравнение(
-            System.out.println("Congratulations, " + Cli.getName() + "!");
-        }
+        return "Congratulations, " + name + "!";
     }
 }

@@ -2,44 +2,47 @@ package hexlet.code.Games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 public class Progression {
-    public static final int NUMBERS_LIMIT = 100;
-    private static int startProgression;
-    private static int stepInProgression;
+    static final int NUMBERS_LIMIT = 100;
+    static final int LIMIT_OBJECT_IN_ARRAY = 3;
+    static final int LIMIT_PROGRESSION = 5;
+    static final int NUMBER_LIMIT_STEPS = 4;
 
     public static void progression() {
         String taskGame = "What number is missing in the progression?";
-        Engine.engine(generationGameData(), taskGame);
+        System.out.println(Engine.engine(generationGameData(), taskGame));
     }
 
     public static String[][] generationGameData() {
-        final int limitObjectInArray = 3;
-        final int numberLimitProgression = 5;
-        final int numberLimitSteps = 4;
-        String[][] gameData = new String[2][limitObjectInArray];
+        final int questionsAndAnswers = 2;
+        String[][] gameData = new String[questionsAndAnswers][LIMIT_OBJECT_IN_ARRAY];
 
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            int[] numbersProgression = new int[numberLimitProgression];
-            StringBuilder stringQuestion = new StringBuilder();
-            startProgression = Utils.getRandomInt(NUMBERS_LIMIT) + 1;
-            stepInProgression = Utils.getRandomInt(numberLimitSteps) + 1;
-            Progression.logicGame(numbersProgression, stringQuestion);
-            gameData[0][i] = String.valueOf(stringQuestion);
-            gameData[1][i] = String.valueOf(numbersProgression[stepInProgression]);
+            int startProgression = Utils.getRandomInt(NUMBERS_LIMIT) + 1;
+            int stepInProgression = Utils.getRandomInt(NUMBER_LIMIT_STEPS) + 1;
+            StringBuilder progression = new StringBuilder();
+            int[] progressionArray = Progression.progressionBuild(startProgression,
+                    stepInProgression, LIMIT_PROGRESSION);
+
+            for (int j : progressionArray) {
+                if (j == progressionArray[stepInProgression]) {
+                    progression.append("..").append(" ");
+                } else {
+                    progression.append(j).append(" ");
+                }
+            }
+            gameData[0][i] = String.valueOf(progression);
+            gameData[1][i] = String.valueOf(progressionArray[stepInProgression]);
         }
         return gameData;
     }
 
-    public static void logicGame(int[] numbersProgression, StringBuilder stringQuestion) {
-        for (int i = 0; i < numbersProgression.length; i++) {
-            numbersProgression[i] = startProgression;
+    public static int[] progressionBuild(int startProgression, int stepInProgression, int limitProgression) {
+        int[] progressionArray = new int[limitProgression];
+
+        for (int i = 0; i < limitProgression; i++) {
+            progressionArray[i] = startProgression;
             startProgression += stepInProgression;
         }
-        for (int j : numbersProgression) {
-            if (j == numbersProgression[stepInProgression]) {
-                stringQuestion.append("..").append(" ");
-            } else {
-                stringQuestion.append(j).append(" ");
-            }
-        }
+        return progressionArray;
     }
 }
