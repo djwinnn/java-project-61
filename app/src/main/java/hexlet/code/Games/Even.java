@@ -17,8 +17,9 @@ public class Even {
         String[][] gameData = new String[questionsAndAnswers][limitObjectInArray];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             double randomNumber = Utils.getRandomInt(NUMBERS_LIMIT, 1);
+            boolean boolValue = isEven(randomNumber);
             gameData[0][i] = String.valueOf(randomNumber);
-            gameData[1][i] = Boolean.toString(isEven(randomNumber));
+            gameData[1][i] = boolValue ? "yes" : "no";
         }
         return gameData;
     }
