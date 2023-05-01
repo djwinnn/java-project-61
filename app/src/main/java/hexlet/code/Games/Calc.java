@@ -22,16 +22,16 @@ public class Calc {
             int randomNumber =   Utils.getRandomInt(NUMBERS_LIMIT, 1);
             int randomNumber2 = Utils.getRandomInt(NUMBERS_LIMIT, 1);
             String operator = operatorDefinition(randomNumberOfOperator);
-            gameData[0][i] = randomNumber + " " + operatorDefinition(randomNumberOfOperator) + " " + randomNumber2;
+            gameData[0][i] = randomNumber + " " + operator + " " + randomNumber2;
             gameData[1][i] = String.valueOf(calculate(operator, randomNumber, randomNumber2));
         }
         return gameData;
     }
 
     public static int calculate(String operator, int randomNumberArg, int randomNumber2Arg) {
-        if (operator.equals("0")) {
+        if (operator.equals("+")) {
             return randomNumberArg + randomNumber2Arg;
-        } else if (operator.equals("1")) {
+        } else if (operator.equals("-")) {
             return randomNumberArg - randomNumber2Arg;
         } else {
             return randomNumberArg * randomNumber2Arg;
