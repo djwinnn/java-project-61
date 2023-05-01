@@ -20,6 +20,7 @@ public class Progression {
             int startProgression = Utils.getRandomInt(NUMBERS_LIMIT) + 1;
             int stepInProgression = Utils.getRandomInt(NUMBER_LIMIT_STEPS) + 1;
             StringBuilder progression = new StringBuilder();
+
             int[] progressionArray = Progression.progressionBuild(startProgression,
                     stepInProgression, LIMIT_PROGRESSION);
 

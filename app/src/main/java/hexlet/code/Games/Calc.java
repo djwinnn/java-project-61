@@ -2,8 +2,6 @@ package hexlet.code.Games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Objects;
-
 public class Calc {
     public static final int NUMBERS_LIMIT = 100;
 

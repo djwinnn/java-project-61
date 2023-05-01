@@ -17,8 +17,9 @@ public class Prime {
         String[][] gameData = new String[questionsAndAnswers][limitObjectInArray];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             int randomNumber = Utils.getRandomInt(NUMBERS_LIMIT, underestimatingRandomness);
-            gameData[0][i] = randomNumber + " ";
-            gameData[1][i] = Boolean.toString(isPrime(randomNumber));
+            boolean boolValue = isPrime(randomNumber);
+            gameData[0][i] = String.valueOf(randomNumber);
+            gameData[1][i] = boolValue ? "yes" : "no";
         }
         return gameData;
     }
