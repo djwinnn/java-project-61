@@ -37,12 +37,10 @@ public class Calc {
     }
 
     public static String operatorDefinition(int randomNumberOfOperatorArg) {
-        if (randomNumberOfOperatorArg == 0) {
-            return  "+";
-        } else if (randomNumberOfOperatorArg == 1) {
-            return  "-";
-        } else {
-            return  "*";
-        }
+        String[] operatorsArray = new String[3];
+        operatorsArray[0] = "+";
+        operatorsArray[1] = "-";
+        operatorsArray[2] = "*";
+        return operatorsArray[randomNumberOfOperatorArg];
     }
 }
