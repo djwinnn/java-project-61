@@ -8,7 +8,7 @@ public class Even {
 
     public static void even() {
         String taskGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        System.out.println(Engine.engine(generationGameData(), taskGame));
+        Engine.engine(generationGameData(), taskGame);
     }
 
     public static String[][] generationGameData() {

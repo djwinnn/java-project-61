@@ -7,7 +7,7 @@ public class Calc {
 
     public static void calc() {
         String taskGame = "What is the result of the expression?";
-        System.out.println(Engine.engine(generationGameData(), taskGame));
+        Engine.engine(generationGameData(), taskGame);
     }
 
     public static String[][] generationGameData() {

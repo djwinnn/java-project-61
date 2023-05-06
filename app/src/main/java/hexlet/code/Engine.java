@@ -2,7 +2,7 @@ package hexlet.code;
 import java.util.Scanner;
 public class Engine {
     public static final int NUMBER_OF_ROUNDS = 3;
-    public static String engine(String[][] gameData, String taskGame) {
+    public static void engine(String[][] gameData, String taskGame) {
 
         Scanner scan = new Scanner(System.in);
 
@@ -21,12 +21,14 @@ public class Engine {
                 System.out.println("Correct!");
 
             } else {
-                return answerUser + " is wrong answer ;(. Correct answer was "
+                System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
                         + gameData[1][i] + ". \n"
-                        + "Let's try again, " + name + "!";
+                        + "Let's try again, " + name + "!");
+                return;
             }
         }
 
-        return "Congratulations, " + name + "!";
+        System.out.println("Congratulations, " + name + "!");
     }
+
 }

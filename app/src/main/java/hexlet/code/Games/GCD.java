@@ -8,7 +8,7 @@ public class GCD {
 
     public static void gcd() {
         String taskGame = "Find the greatest common divisor of given numbers.";
-        System.out.println(Engine.engine(generationGameData(), taskGame));
+        Engine.engine(generationGameData(), taskGame);
     }
 
     public static String[][] generationGameData() {
