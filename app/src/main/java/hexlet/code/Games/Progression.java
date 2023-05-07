@@ -3,7 +3,6 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 public class Progression {
     static final int NUMBERS_LIMIT = 100;
-    static final int LIMIT_OBJECT_IN_ARRAY = 3;
     static final int LIMIT_PROGRESSION = 5;
     static final int NUMBER_LIMIT_STEPS = 4;
 
@@ -13,8 +12,9 @@ public class Progression {
     }
 
     public static String[][] generationGameData() {
+        final int maximumGamesPerSession = 3;
         final int questionsAndAnswers = 2;
-        String[][] gameData = new String[questionsAndAnswers][LIMIT_OBJECT_IN_ARRAY];
+        String[][] gameData = new String[maximumGamesPerSession][questionsAndAnswers];
 
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             int startProgression = Utils.getRandomInt(NUMBERS_LIMIT) + 1;
@@ -31,18 +31,16 @@ public class Progression {
                     progression.append(j).append(" ");
                 }
             }
-            gameData[0][i] = String.valueOf(progression);
-            gameData[1][i] = String.valueOf(progressionArray[stepInProgression]);
+            gameData[i][0] = String.valueOf(progression);
+            gameData[i][1] = String.valueOf(progressionArray[stepInProgression]);
         }
         return gameData;
     }
 
     public static int[] progressionBuild(int startProgression, int stepInProgression, int limitProgression) {
         int[] progressionArray = new int[limitProgression];
-
         for (int i = 0; i < limitProgression; i++) {
-            progressionArray[i] = startProgression;
-            startProgression += stepInProgression;
+            progressionArray[i] = startProgression + stepInProgression * i;
         }
         return progressionArray;
     }

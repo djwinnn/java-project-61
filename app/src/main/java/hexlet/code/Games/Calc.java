@@ -11,33 +11,35 @@ public class Calc {
     }
 
     public static String[][] generationGameData() {
-        final int limitObjectInArray = 3;
         final int maximumOperators = 3;
+        final int maximumGamesPerSession = 3;
         final int questionsAndAnswers = 2;
-        String[][] gameData = new String[questionsAndAnswers][limitObjectInArray];
+        String[][] gameData = new String[maximumGamesPerSession][questionsAndAnswers];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             int randomNumberOfOperator = Utils.getRandomInt(maximumOperators);
             int randomNumber =   Utils.getRandomInt(NUMBERS_LIMIT, 1);
             int randomNumber2 = Utils.getRandomInt(NUMBERS_LIMIT, 1);
             String operator = operatorDefinition(randomNumberOfOperator);
-            gameData[0][i] = randomNumber + " " + operator + " " + randomNumber2;
-            gameData[1][i] = String.valueOf(calculate(operator, randomNumber, randomNumber2));
+            gameData[i][0] = randomNumber + " " + operator + " " + randomNumber2;
+            gameData[i][1] = String.valueOf(calculate(operator, randomNumber, randomNumber2));
         }
         return gameData;
     }
 
     public static int calculate(String operator, int randomNumberArg, int randomNumber2Arg) {
-        if (operator.equals("+")) {
-            return randomNumberArg + randomNumber2Arg;
-        } else if (operator.equals("-")) {
-            return randomNumberArg - randomNumber2Arg;
-        } else {
-            return randomNumberArg * randomNumber2Arg;
+        int result = 0;
+        switch (operator) { //не понял как у нас может получится невалидный оператор. Пользователь же его не выбирает
+            case "+" -> result = randomNumberArg + randomNumber2Arg;
+            case "-" -> result = randomNumberArg - randomNumber2Arg;
+            case "*" -> result = randomNumberArg * randomNumber2Arg;
         }
+        return result;
     }
 
+
     public static String operatorDefinition(int randomNumberOfOperatorArg) {
-        String[] operatorsArray = new String[3];
+        final int maximumOperators = 3;
+        String[] operatorsArray = new String[maximumOperators];
         operatorsArray[0] = "+";
         operatorsArray[1] = "-";
         operatorsArray[2] = "*";

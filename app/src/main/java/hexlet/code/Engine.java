@@ -13,16 +13,16 @@ public class Engine {
         System.out.println(taskGame);
 
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
-            System.out.println("Question: " + gameData[0][i]);
+            System.out.println("Question: " + gameData[i][0]);
             System.out.print("Your answer: ");
             String answerUser = scan.nextLine();
 
-            if (answerUser.equals(gameData[1][i])) {
+            if (answerUser.equals(gameData[i][1])) {
                 System.out.println("Correct!");
 
             } else {
                 System.out.println(answerUser + " is wrong answer ;(. Correct answer was "
-                        + gameData[1][i] + ". \n"
+                        + gameData[i][1] + ". \n"
                         + "Let's try again, " + name + "!");
                 return;
             }

@@ -12,14 +12,14 @@ public class Even {
     }
 
     public static String[][] generationGameData() {
-        final int limitObjectInArray = 3;
+        final int maximumGamesPerSession = 3;
         final int questionsAndAnswers = 2;
-        String[][] gameData = new String[questionsAndAnswers][limitObjectInArray];
+        String[][] gameData = new String[maximumGamesPerSession][questionsAndAnswers];
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             double randomNumber = Utils.getRandomInt(NUMBERS_LIMIT, 1);
             boolean boolValue = isEven(randomNumber);
-            gameData[0][i] = String.valueOf(randomNumber);
-            gameData[1][i] = boolValue ? "yes" : "no";
+            gameData[i][0] = String.valueOf(randomNumber);
+            gameData[i][1] = boolValue ? "yes" : "no";
         }
         return gameData;
     }
