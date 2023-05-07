@@ -6,12 +6,12 @@ public class GCD {
     public static final int NUMBERS_LIMIT = 100;
 
 
-    public static void gcd() {
+    public static void runGame() {
         String taskGame = "Find the greatest common divisor of given numbers.";
-        Engine.engine(generationGameData(), taskGame);
+        Engine.run(generateGameData(), taskGame);
     }
 
-    public static String[][] generationGameData() {
+    public static String[][] generateGameData() {
         final int maximumGamesPerSession = 3;
         final int questionsAndAnswers = 2;
         String[][] gameData = new String[maximumGamesPerSession][questionsAndAnswers];

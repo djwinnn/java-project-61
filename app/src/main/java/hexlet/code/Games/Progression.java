@@ -6,12 +6,12 @@ public class Progression {
     static final int LIMIT_PROGRESSION = 5;
     static final int NUMBER_LIMIT_STEPS = 4;
 
-    public static void progression() {
+    public static void runGame() {
         String taskGame = "What number is missing in the progression?";
-        Engine.engine(generationGameData(), taskGame);
+        Engine.run(generateGameData(), taskGame);
     }
 
-    public static String[][] generationGameData() {
+    public static String[][] generateGameData() {
         final int maximumGamesPerSession = 3;
         final int questionsAndAnswers = 2;
         String[][] gameData = new String[maximumGamesPerSession][questionsAndAnswers];
@@ -21,7 +21,7 @@ public class Progression {
             int stepInProgression = Utils.getRandomInt(NUMBER_LIMIT_STEPS) + 1;
             StringBuilder progression = new StringBuilder();
 
-            int[] progressionArray = Progression.progressionBuild(startProgression,
+            int[] progressionArray = Progression.buildProgression(startProgression,
                     stepInProgression, LIMIT_PROGRESSION);
 
             for (int j : progressionArray) {
@@ -37,7 +37,7 @@ public class Progression {
         return gameData;
     }
 
-    public static int[] progressionBuild(int startProgression, int stepInProgression, int limitProgression) {
+    public static int[] buildProgression(int startProgression, int stepInProgression, int limitProgression) {
         int[] progressionArray = new int[limitProgression];
         for (int i = 0; i < limitProgression; i++) {
             progressionArray[i] = startProgression + stepInProgression * i;

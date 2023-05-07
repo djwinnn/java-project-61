@@ -6,12 +6,12 @@ public class Even {
     public static final int NUMBERS_LIMIT = 100;
 
 
-    public static void even() {
+    public static void runGame() {
         String taskGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        Engine.engine(generationGameData(), taskGame);
+        Engine.run(generateGameData(), taskGame);
     }
 
-    public static String[][] generationGameData() {
+    public static String[][] generateGameData() {
         final int maximumGamesPerSession = 3;
         final int questionsAndAnswers = 2;
         String[][] gameData = new String[maximumGamesPerSession][questionsAndAnswers];

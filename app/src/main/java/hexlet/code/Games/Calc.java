@@ -5,12 +5,12 @@ import hexlet.code.Utils;
 public class Calc {
     public static final int NUMBERS_LIMIT = 100;
 
-    public static void calc() {
+    public static void runGame() {
         String taskGame = "What is the result of the expression?";
-        Engine.engine(generationGameData(), taskGame);
+        Engine.run(generateGameData(), taskGame);
     }
 
-    public static String[][] generationGameData() {
+    public static String[][] generateGameData() {
         final int maximumOperators = 3;
         final int maximumGamesPerSession = 3;
         final int questionsAndAnswers = 2;

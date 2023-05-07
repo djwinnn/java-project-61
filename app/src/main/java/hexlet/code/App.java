@@ -26,11 +26,11 @@ public final class App {
         switch (choiceUser) {
             case "0" -> System.out.println("You have left the game.");
             case "1" -> Cli.communication();
-            case "2" -> Even.even();
-            case "3" -> Calc.calc();
-            case "4" -> GCD.gcd();
-            case "5" -> Progression.progression();
-            case "6" -> Prime.prime();
+            case "2" -> Even.runGame();
+            case "3" -> Calc.runGame();
+            case "4" -> GCD.runGame();
+            case "5" -> Progression.runGame();
+            case "6" -> Prime.runGame();
             default -> System.out.println("Incorrect input");
         }
     }

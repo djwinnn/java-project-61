@@ -5,12 +5,12 @@ import hexlet.code.Utils;
 public class Prime {
     public static final int NUMBERS_LIMIT = 100;
 
-    public static void prime() {
+    public static void runGame() {
         String taskGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        Engine.engine(generationGameData(), taskGame);
+        Engine.run(generateGameData(), taskGame);
     }
 
-    public static String[][] generationGameData() {
+    public static String[][] generateGameData() {
         final int underestimatingRandomness = -2;
         final int maximumGamesPerSession = 3;
         final int questionsAndAnswers = 2;
