@@ -27,13 +27,20 @@ public class Calc {
     }
 
     public static int calculate(String operator, int randomNumberArg, int randomNumber2Arg) {
-        int result = 0;
         switch (operator) { //не понял как у нас может получится невалидный оператор. Пользователь же его не выбирает
-            case "+" -> result = randomNumberArg + randomNumber2Arg;
-            case "-" -> result = randomNumberArg - randomNumber2Arg;
-            case "*" -> result = randomNumberArg * randomNumber2Arg;
+            case "+" -> {
+                return randomNumberArg + randomNumber2Arg;
+            }
+            case "-" -> {
+                return randomNumberArg - randomNumber2Arg;
+            }
+            case "*" -> {
+                return randomNumberArg * randomNumber2Arg;
+            }
+            default -> {
+            }
         }
-        return result;
+        return 0;
     }
 
 
